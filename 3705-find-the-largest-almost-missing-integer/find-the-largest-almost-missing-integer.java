@@ -1,6 +1,5 @@
 class Solution {
     public int largestInteger(int[] nums, int k) {
-        HashMap<Integer, Integer> hs = new HashMap<Integer, Integer>();
         int len = nums.length;
 
         if(k >= len) {
@@ -8,6 +7,7 @@ class Solution {
             return nums[len-1];
         }
 
+        HashMap<Integer, Integer> hs = new HashMap<Integer, Integer>();
         for(int i=0; i<=len-k; i++) {
             for(int j=i; j<i+k; j++) {
                 hs.putIfAbsent(nums[j], 0);
