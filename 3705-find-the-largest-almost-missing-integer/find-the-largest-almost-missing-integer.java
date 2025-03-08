@@ -10,13 +10,13 @@ class Solution {
             }
         }
 
-        int max = Integer.MIN_VALUE;
+        int max = -1;
         for(Integer i: hs.keySet()) {
             if(hs.get(i).size() == 1) {
                 max = Math.max(max, i);
             }
         }
 
-        return max == Integer.MIN_VALUE ? -1 : max;
+        return max;
     }
 }
