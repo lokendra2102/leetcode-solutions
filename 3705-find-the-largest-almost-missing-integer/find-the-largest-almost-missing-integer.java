@@ -7,19 +7,16 @@ class Solution {
             return nums[len-1];
         }
 
-        HashMap<Integer, Integer> hs = new HashMap<Integer, Integer>();
+        int[] arr = new int[51];
         for(int i=0; i<=len-k; i++) {
             for(int j=i; j<i+k; j++) {
-                hs.putIfAbsent(nums[j], 0);
-                hs.put(nums[j], hs.get(nums[j]) + 1);
+                arr[nums[j]]++;
             }
         }
 
         int max = -1;
-        for(Integer i: hs.keySet()) {
-            if(hs.get(i) == 1) {
-                max = Math.max(max, i);
-            }
+        for(int i=0; i<51; i++) {
+            if(arr[i] == 1) max = Math.max(max, i);
         }
 
         return max;
